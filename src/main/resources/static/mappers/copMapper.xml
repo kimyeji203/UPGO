@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.inhatc.spring.mapper.CopMapper">
+	<!-- 업체 등록 -->
+	<insert id="copRegist" parameterType="com.inhatc.spring.vo.CopVO">
+		insert into coperation
+		values(null, #{cop_name}, #{cop_content},#{cop_call},#{cop_addr})
+	</insert>
+	<!-- 업체 조회 -->
+	<select id="copAll" resultType="hashmap">
+		select * from coperation
+	</select>
+	<!-- 업체의 리뷰 조회 -->
+	<select id="copReview" parameterType="Integer" resultType="com.inhatc.spring.comm.domain.BoardVO">
+		SELECT B_NO, B_TITLE, B_CONTENT, B_WRITER, 
+		date_format(B_DATE,'%Y-%m-%d %h:%i:%s') as B_DATE, B_HITS, COP_NO, PROD_NO
+		FROM COMMUNITY
+		where cop_no = #{cop_no}
+	</select>
+	<!-- 업체 상세보기 -->
+	<select id="copOne" parameterType="Integer" resultType="hashmap">
+		select * from coperation
+		where cop_no = #{cop_no}
+	</select>
+	<!-- 업체 삭제 -->
+	<delete id="copDelete" parameterType="Integer">
+		delete from coperation
+		where cop_no = #{cop_no}
+	</delete>
+	<!-- 업체 수정 -->
+	<update id="copUpdate" parameterType="com.inhatc.spring.vo.CopVO">
+		update coperation
+		set
+			cop_name = #{cop_name},
+			cop_content = #{cop_content},
+			cop_call = #{cop_call},
+			cop_addr = #{cop_addr}
+		where
+			cop_no = #{cop_no}
+	</update>
+</mapper>

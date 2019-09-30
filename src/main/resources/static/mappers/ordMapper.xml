@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.inhatc.spring.mapper.OrdMapper">
+	<!-- 기타 -->
+	<select id="showProd" resultType="hashmap">
+		select * from product
+	</select>
+	
+	<!-- 주문 등록 -->
+	<insert id="ordRegist" parameterType="com.inhatc.spring.vo.OrdVO">
+		insert into `order`
+		values(null, #{ord_name},#{prod_no},#{cop_no},#{ord_want},#{ord_count},#{ord_price},SYSDATE(),#{ord_addr},#{ord_email})
+	</insert>
+	
+	<!-- 주문 조회 -->
+	<select id="ordAll" resultType="com.inhatc.spring.vo.OrdVO">
+		select * from `order`
+		order by ord_no desc
+	</select>
+	<select id="ordCopName" resultType="String" parameterType="Integer">
+		select cop_name
+		from coperation
+		where cop_no = #{cop_no}
+	</select>
+	<select id="ordProdName" resultType="String" parameterType="Integer">
+		select prod_name
+		from product
+		where prod_no = #{prod_no}
+	</select>
+	
+	<!-- 주문 상세보기 -->
+	<select id="ordOne" parameterType="Integer" resultType="hashmap">
+		select * from `order`
+		where ord_no = #{ord_no}
+	</select>
+	
+	<!-- 주문 삭제 -->
+	<delete id="ordDelete" parameterType="Integer">
+		delete from `order`
+		where ord_no = #{ord_no}
+	</delete>
+	
+	<!-- 주문 수정 -->
+	<update id="ordUpdate" parameterType="com.inhatc.spring.vo.OrdVO">
+		update `order`
+		set
+			ord_name = #{ord_name},
+			ord_want = #{ord_want},
+			ord_count = #{ord_count},
+			ord_price = #{ord_price},
+			ord_date = SYSDATE(),
+			prod_no = #{prod_no},
+			cop_no = #{cop_no},
+			ord_addr = #{ord_addr},
+			ord_email=#{ord_email}
+		where
+			ord_no = #{ord_no}
+	</update>
+</mapper>

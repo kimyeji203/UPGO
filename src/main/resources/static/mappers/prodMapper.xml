@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.spring.prod.mapper.ProdMapper">
+	<select id="selectProdName" resultType="String">
+		SELECT prod_name FROM UPGO.product
+	</select>
+	
+	<select id="selectAllData" resultType="com.inhatc.spring.vo.ProdVO">
+		SELECT
+			prod_no, prod_name, cop_no, prod_price, prod_stock, prod_content, prod_photo, prod_date
+		FROM UPGO.product
+	</select>
+
+	<select id="selectOneData" parameterType="String" resultType="com.inhatc.spring.vo.ProdVO">
+		SELECT
+			prod_no, prod_name, cop_no, prod_price, prod_stock, prod_content, prod_photo, prod_date
+		FROM UPGO.product
+		WHERE prod_no = #{value}
+	</select>
+	
+ 	<insert id="insertData" parameterType="com.inhatc.spring.vo.ProdVO">
+		INSERT INTO UPGO.product (prod_name, cop_no, prod_price, prod_stock, prod_content,prod_date)
+		<!-- VALUES (prod_name, cop_no, prod_price, prod_stock, prod_content);-->
+		VALUES (#{prod_name}, #{cop_no}, #{prod_price}, #{prod_stock}, #{prod_content},now());
+	</insert>
+	
+	<delete id="deleteData" parameterType="String">
+		DELETE FROM UPGO.product 
+		WHERE prod_no = #{value}
+	</delete>
+	
+	<update id="updateData" parameterType="com.inhatc.spring.vo.ProdVO">
+		UPDATE UPGO.product 
+		SET 
+			prod_name = #{prod_name}, 
+			cop_no = #{cop_no}, 
+			prod_price = #{prod_price}, 
+			prod_stock = #{prod_stock},
+			prod_content = #{prod_content} 
+		WHERE prod_no = #{prod_no};
+	</update>
+</mapper>

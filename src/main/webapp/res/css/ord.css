@@ -1,0 +1,39 @@
+@charset "EUC-KR";
+
+/*public*/
+
+.container{
+	border-left:1px solid grey; 
+	border-right:1px solid grey;
+}
+.col-xs-12{
+	margin:15px auto;
+}
+.float-r{float:right;}
+.info{
+	float:left;
+	margin:1% 2% 1% 2%;
+	padding:0;
+	width:130px;
+	height:130px;
+	background-color:#fff;
+	border:2px solid #ff6b50;
+	border-radius: 25px 50px;
+	
+	text-align:center;
+	color:#ff6b50;
+}
+
+/*list*/
+tr.titleTR{
+	color:#f42a07;
+	font-weight:700;
+}
+tr.contentTr:hover
+{
+	background-color:#fce6e2;
+	cursor:pointer;
+}
+
+/*detaile*/
+

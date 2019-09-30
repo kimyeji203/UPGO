@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.inhatc.spring.comm.mapper.BoardMapper">
+
+	<select id="boardCount" resultType="int">
+		SELECT count(*) FROM COMMUNITY;
+	</select>
+	
+	<select id="boardList" resultType="com.inhatc.spring.comm.domain.BoardVO">
+		SELECT B_NO, B_TITLE, B_CONTENT, B_WRITER, date_format(B_DATE,'%Y-%m-%d %h:%i:%s') as B_DATE, B_HITS, COP_NO, PROD_NO
+		FROM COMMUNITY;
+	</select>
+	
+   	<insert id="boardInsert" parameterType="com.inhatc.spring.comm.domain.BoardVO">
+      INSERT INTO
+      COMMUNITY(B_NO,B_TITLE,B_CONTENT,B_WRITER,B_DATE,COP_NO, PROD_NO,B_HITS)
+      VALUES(#{b_no},#{b_title},#{b_content},#{b_writer},now(),#{cop_no}, #{prod_no},#{b_hits})
+   	</insert>
+   	
+   	<select id="boardDetail" parameterType="int" resultType="com.inhatc.spring.comm.domain.BoardVO">
+		SELECT *
+		FROM COMMUNITY
+		WHERE B_NO = #{b_no}	
+	</select>
+	
+	<update id="boardHit" parameterType="int">
+		UPDATE COMMUNITY
+		SET
+			B_HITS=B_HITS+1
+		WHERE B_NO = #{b_no}
+	</update>
+	
+	<update id="boardUpdate" parameterType="com.inhatc.spring.comm.domain.BoardVO">
+		UPDATE COMMUNITY
+		SET
+			<if test="b_title != null">
+				B_TITLE=#{b_title}
+			</if>
+			<if test="b_title != null and b_content != null">,</if>
+			<if test="b_content != null">
+				B_CONTENT = #{b_content}
+			</if>
+			WHERE B_NO = #{b_no}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM COMMUNITY WHERE B_NO = #{b_no}
+	</delete>
+	
+	<select id="copSelectAll" resultType="com.inhatc.spring.vo.CopVO">
+		SELECT * FROM COPERATION
+	</select>
+</mapper>

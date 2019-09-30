@@ -1,0 +1,128 @@
+html, body{margin:0;padding:0;}
+
+p{margin:0;padding:0;}
+body{margin:3%;}
+
+table#publicTable {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-left: 3px solid #369;
+  	margin : 1% 2% 1% 0;
+  	width:80%;
+}
+table#publicTable th {
+    width: 147px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+table#publicTable td {
+    width: 349px;
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+/*  리뷰 전용 css START */
+tr.dtgTR{
+	border-bottom: 1px solid #ccc;
+}
+td.writerTD{
+	color: #153d73;
+	font-weight: bold;
+}
+td.dateTD{
+	text-align:right;
+	font-size:10px;
+}
+td.linkTD{
+	color:#fff;
+	background-color: #369;
+	cursor:pointer;
+	
+	text-align:center;
+}
+#reviewDiv{
+	margin-top:3%;
+}
+#reviewDiv > #publicTable{
+	border:none;
+	width:50%;
+	margin:0;
+	padding:0;
+}
+#reviewDiv > #publicTable td{
+	border:none;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+/* 리뷰 전용 css END */
+.form-control{
+	height: 26px;
+  padding: 2px 12px;
+  margin-bottom: 5px;
+  width:90%;
+}
+.has-success .form-control {
+  border-color:#63CC9E;
+}
+.has-warning .form-control {
+  border-color:#DFD271;
+}
+.has-error .form-control {
+  border-color:#D15E5E;
+}
+.has-success .form-control:focus {
+  border-color: #63CC9E;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #63CC9E;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #63CC9E;
+}
+.has-warning .form-control:focus {
+  border-color: #DFD271;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #DFD271;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #DFD271;
+}
+.has-error .form-control:focus {
+  border-color: #D15E5E;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #D15E5E;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #D15E5E;
+}
+.has-feedback .form-control-feedback {
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+}
+
+.copDiv{
+	float:left;
+	margin:1% 2% 1% 0;
+	padding:0;
+	width:130px;
+	height:130px;
+	background-color:#fff;
+	border:1px solid #ff6b50;
+	border-radius: 25px 50px;
+	
+	text-align:center;
+	color:#ff6b50;
+}
+
+.copDiv:hover{
+	cursor:pointer;
+	background-color:#369;
+	color:#fff;
+}
+.info{margin-top:25%;}
+.publicTr:hover{
+	cursor:pointer;
+	background-color:#369;
+	color:#fff;	
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.inhatc.spring.comm.mapper.CommentMapper">
+	
+	<select id="commentList" resultType="com.inhatc.spring.comm.domain.CommentVO">
+		SELECT * FROM COMMENT WHERE B_NO = #{b_no} ORDER BY C_NO 
+	</select>
+	
+	<insert id="commentInsert" parameterType="com.inhatc.spring.comm.domain.CommentVO">
+		INSERT INTO
+		COMMENT(C_NO, B_NO, C_CONTENT,C_WRITER, C_DATE)
+		VALUES(#{c_no},#{b_no},#{c_content},#{c_writer},now())
+	</insert>
+	
+	<update id="commentUpdate" parameterType="com.inhatc.spring.comm.domain.CommentVO">
+		UPDATE COMMENT
+			SET C_CONTENT = #{c_content}
+		WHERE C_NO = #{c_no}
+	</update>
+	
+	<delete id="commentDelete" parameterType="int">
+		DELETE FROM COMMENT WHERE C_NO = #{c_no}
+	</delete>
+</mapper>
