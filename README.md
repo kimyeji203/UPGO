@@ -14,5 +14,20 @@ _ 업체 CRUD 페이지, 주문 CRUD 페이지 제작<br>
 _ DB 설계(공동 참여)<br>
 
 <br><br><br>
+# 프로젝트 설명
+<div>
+
+</div>
+
+<br><br><br>
+# 사이트 맵
+<div>
+
+</div>
+<br><br><br>
 # 실행 화면
+<div>
+<img width="1000" alt="캡처1" src="https://user-images.githubusercontent.com/38337323/66105040-4f32fa80-e5f5-11e9-8dfa-7d8ff6022790.PNG">
+<img width="1000" alt="캡처2" src="https://user-images.githubusercontent.com/38337323/66105041-4f32fa80-e5f5-11e9-9965-fe5992089b37.PNG">
+</div>
 
