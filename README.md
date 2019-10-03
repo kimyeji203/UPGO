@@ -16,14 +16,15 @@ _ DB 설계(공동 참여)<br>
 <br><br><br>
 # 프로젝트 설명
 <div>
-<img width="504" alt="프로젝트 설명" src="https://user-images.githubusercontent.com/38337323/66105251-f879f080-e5f5-11e9-88f5-5d909d936278.PNG">
+<img width="600" alt="프로젝트 설명" src="https://user-images.githubusercontent.com/38337323/66105251-f879f080-e5f5-11e9-88f5-5d909d936278.PNG">
 </div>
 
 <br><br><br>
 # 사이트 맵
 <div>
-<img width="489" alt="사이트맵" src="https://user-images.githubusercontent.com/38337323/66105250-f879f080-e5f5-11e9-9b79-9447c401d928.PNG">
+<img width="600" alt="사이트맵" src="https://user-images.githubusercontent.com/38337323/66105250-f879f080-e5f5-11e9-9b79-9447c401d928.PNG">
 </div>
+
 <br><br><br>
 # 실행 화면
 <div>
