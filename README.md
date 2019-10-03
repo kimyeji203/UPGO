@@ -1,9 +1,10 @@
 # UPGO
-_ 개인사업자를 위한 업체 관리 프로그램<br>
+개인사업자를 위한 업체 관리 프로그램<br><br>
+
 _ Spring Framework, Mybatis, MySQL<br>
 _ HTML, CSS, JAVA, JavaScript, JQurey, JSTL<br><br>
 
-_3인 개발<br>
+_ 3인 개발<br>
 _ 개발 기간 1주 (2019.06)<br>
 
 <br><br><br>
